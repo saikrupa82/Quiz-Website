@@ -1,0 +1,79 @@
+{% load static %}
+<head>
+	<title>
+		{{ head }}
+	</title>
+		<link href='https://css.gg/menu-left-alt.css' rel='stylesheet'>
+		<link rel="stylesheet" type="text/css" href="{% static 'assets/css/OrginalQuiz.css'%}"> <!--c1 is by lucky and c is by mdk-->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
+
+	</head>
+<body oncontextmenu="return false;">
+
+	<ul class="nav">
+		<li class="Subject-Name">{{quizlist.NameOfTest }}</li>
+	</ul>
+	
+	<div class="components">
+		
+		<div class="main">
+			<div class="quiz-container">
+				<div id="quiz">
+					
+				</div>
+			</div>
+		
+			<div class="taq">
+				<article class="clock">
+					<h5></h5>
+		
+					<div class="count">
+						<div id="timer"></div>
+					</div>
+				</article>
+	
+				<div id="status" class="status">
+					
+				</div>
+				<div class="fac">
+					<button id="flag" class="Flag">
+						FG
+					</button>
+					
+					<button id="clear" class="Clear">
+						C
+					</button>
+				</div>
+				<a href="{% url 'Endquiz' %}"><button id="submit" class="Submit">Submit</button></a>
+			</div>
+			
+		</div>
+
+		
+		<div class="buttons">
+			<button id="previous">Previous</button>
+			<button id="next">Next</button>
+		</div>
+		
+	</div>
+	<p id='Question'></p>
+
+
+
+	<script type="text/javascript">
+	
+		function load_Questions() {
+                return '{{ Questions | safe }}';
+			}
+			function load_Time() {
+                return '{{ time | safe }}';
+            }
+	</script>
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script type="text/javascript" src="{% static 'assets/js/OrginalQuiz.js'%}"></script>
+</body>
+</html>

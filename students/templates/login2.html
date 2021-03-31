@@ -1,0 +1,171 @@
+{% load static %} {% csrf_token %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+    integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX"
+    crossorigin="anonymous"
+    />
+
+    <!-- Google Fonts -->
+    <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@400;500&display=swap"
+    rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/12f299907d.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="{% static 'assets/css/login1.css' %}" />
+    <link rel="shortcut icon" href="{% static 'assets/img/enigma' %}" type="image/x-icon">
+
+</head>
+<body>
+    <div class="row">
+
+        <div class="col-md-7 container-fluid">
+            
+            <nav class="navbar">
+                <img src="{% static 'assets/img/enigma.png' %}" alt="enigmacodex-logo" class="navbar-brand brand-img">
+            </nav>
+
+            <section id="Login">
+                <h1 class="mb-4 pl-1">We are <strong>ACE</strong></h1>
+                <p class="pl">
+                    Welcome Back, Please login to your account.
+                </p>
+                <div class="mt-4 pl">
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <label for="text"><strong>Username</strong></label>{% csrf_token %}
+                        <input type="text" class="form-newline" name='username' id="username" required>
+                        <label for="password"><strong>Password</strong></label>{% csrf_token %}
+                        <input type="password" id="password" name='password' required class="form-newline">
+                        <input type="checkbox" id="rememberme">
+                        <label for="rememberme">Remember me</label>
+                        <a href="#" class="ml" id="forgot-btn"><strong>Forgot Password</strong></a>
+                        <br>
+                        <button type="submit" class="btn btn-dark">Login</button>
+                        <!-- <button type="button" class="btn" id="signup-btn">Signup</button> -->
+                    </form>
+                </div>
+            </section>
+        
+            <section id="Signup" class="display_none">
+                <h1 class="mb-4 pl-1">Create account</h1>
+                <div class="pl">
+                    <form action="">
+                        <label for="email"><strong>Email Address</strong></label>
+                        <input type="email" class="form-newline">
+                        <label for="password"><strong>Password</strong></label>
+                        <input type="password" class="form-newline">
+                        <label for="password"><strong>Re-Enter Password</strong></label>
+                        <input type="password" class="form-newline">
+                        <button type="submit" class="btn btn-dark btn-block mt-5">Signup</button>
+                    </form>
+                    <p>Already have an account? <a href="#" class="login-btn"><strong class="ml-1">Log in here</strong></a> </p>
+                </div>
+            </section>
+
+            <section id="ForgotPassword" class="display_none">
+                <h1 class="mb-4 pl-1">Forgot your <strong>password?</strong></h1>
+                <p class="pl">
+                    We'll help you reset it and get back on track. 
+                </p>
+                <div class="pl mt-5">
+                    <form action="">
+                        <label for="email"><strong>Email Address</strong></label>
+                        <input type="email" class="form-newline">
+                        <button type="button" class="btn btn-dark" id="reset-btn">Reset Password</button>
+                        <button type="button" class="btn login-btn">Back to sign in</button>
+                    </form>
+                </div>
+            </section>
+
+            <section id="Verification" class="display_none">
+                <h1 class="mb-4 pl-1"><strong>Verification</strong></h1>
+                <p class="pl mb-2">
+                    Enter the verification code we just sent you on your email address.
+                </p>
+                <div class="pl mt-5">
+                    <form action="">
+                        <label for="otp"></label>
+                        <input type="text" class="otp" maxlength="1"  />
+                        <input type="text" class="otp" maxlength="1" />
+                        <input type="text" class="otp" maxlength="1" />
+                        <input type="text" class="otp" maxlength="1" />
+                        <input type="text" class="otp" maxlength="1" />
+                        <input type="text" class="otp" maxlength="1" />
+                        <p class="mt-4">if you didn't recieve a code! <a href="#" id=""><strong>Resend</strong></a> </p>
+                        <button type="button" class="btn btn-dark btn-block mt-5" id="verify-btn">Verify</button>
+                    </form>
+                </div>
+            </section>
+
+            <section id="newpass" class="display_none">
+                <h1 class="mb-4 pl-1">Reset your <strong>password</strong></h1>
+                <div class="pl mt-5">
+                    <form action="">
+                        <label for="password"><strong>New Password</strong></label>
+                        <input type="password" class="form-newline">
+                        <label for="password"><strong>Re-enter Password</strong></label>
+                        <input type="password" class="form-newline">
+                        <button type="button" class="btn btn-dark mt-3" id="done-btn">Done</button>
+                    </form>
+                </div>
+            </section>
+
+            <section id="success" class="display_none">
+                <p>
+                <strong><i class="fa fa-check" aria-hidden="true"></i></strong>
+                Well done! password reset successful. Go back to <a href="#" class="login-btn"><strong>Login </strong></a>page.
+                </p>
+            </section>
+
+        </div>
+        
+        <div class="col-md-5 hero">
+            <div class="hero-img"></div>
+            <img class="d-block w-100" src="{% static 'assets/img/image_processing20200120-18687-iayp43.gif' %}" alt="" loop=false/>
+            <div class="hero-img"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <section id="footer" class="container-fluid">
+                <a href="https://github.com/EnigmaCodex-ACE"
+                  target='_blank'><i class="fab fa-github footer-icons"></i
+                ></a>
+                <a href=""
+                target='_blank'><i class="fab fa-linkedin-in footer-icons"></i
+                ></a>
+                <a href="mailto: enigmacodexace@gmail.com"
+                  target='_blank'><i class="fas fa-envelope footer-icons"></i
+                ></a>
+                <p class="copyright-text">© copyright 2020 ACE</p>
+            </section>
+        </div>
+    </div>
+    
+      <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
+
+    <script type="text/javascript" src="{% static 'assets/js/login1.js' %}"></script>
+</body>
+</html>

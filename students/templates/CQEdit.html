@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% csrf_token %}
+
+<body>
+  <link rel="stylesheet" type="text/css" href="{% static 'assets/css/CQ.css'%}">
+  <div id="FC" class="">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+  </div>
+
+  <div class="buttons">
+    <button id="add-question" class="add-question">+</button>
+    <button id="save" class="save" type="submit">save</button>
+    </form>
+  </div>
+  <script type="text/javascript">
+
+    function load_Questions() {
+      
+      return '{{ mydata | safe }}';
+    }
+    
+    function load_Time() {
+      return '{{ time | safe }}';
+    }
+
+    function load_Mode() {
+      return '{{ mode | safe }}';
+    }
+
+    function load_Quiz() {
+      return '{{ QuizName | safe }}';
+    }
+
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script type="text/javascript" src="{% static 'assets/js/CQEdit.js'%}"></script>
+</body>
+{% endblock %}

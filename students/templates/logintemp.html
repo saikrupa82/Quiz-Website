@@ -1,0 +1,106 @@
+{% load static %}
+{% csrf_token %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+    integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX"
+    crossorigin="anonymous"
+    />
+    <!-- Google Fonts -->
+    <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@400;500&display=swap"
+    rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}"/>
+    <link rel="shortcut icon" href="{% static 'assets/img/enigma' %}"type="image/x-icon">
+
+</head>
+<body>
+    <div class="row">
+
+        <div class="col-md-7 container-fluid">
+            
+            <nav class="navbar">
+                
+                <img src="{% static 'assets/img/college-logo.png'%}" alt="college-logo" class="college-logo">
+                <img src="{% static 'assets/img/enigma.png' %}" alt="enigmacodex-logo" class="navbar-brand brand-img">
+                
+            </nav>
+            <section id="Login">
+                <h1 class="mb-4 pl-1">We are <strong>ACE</strong></h1>
+                <p class="pl">
+                    Welcome Back, Please login to your account.
+                </p>
+                <div class="mt-4 pl">
+                    <form  method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="box">
+                            <label for="text"><strong>Username</strong></label>{% csrf_token %}
+                            <input type="text" class="form-newline" name='username' id="username" required>
+                            <label for="password"><strong>Password</strong></label>{% csrf_token %}
+                            <input type="password" id="password" name='password'required class="form-newline">
+                        </div>
+                        <div>
+                            <input type="checkbox" id="rememberme">
+                            <label for="rememberme">Remember me</label>
+                            <a href="#" class="ml">Forgot Password?</a>
+                        </div>
+                        <button type="submit" class="btn btn-dark">Login</button>
+                      
+                    </form>
+                </div>
+            </section>
+        
+            <section id="Signup" class="signup-form">
+                <h1 class="mb-4 pl-1">Create account</h1>
+                <span class="pl"></span>
+                <div class="pl">
+                    <form action="">
+                        <div class="box">
+                            <label for="email"><strong>Email Address</strong></label>
+                            <input type="email" class="form-newline">
+                            <label for="password"><strong>Password</strong></label>
+                            <input type="password" class="form-newline">
+                        </div>
+                        <button type="submit" class="btn btn-dark btn-block mt-5">Signup</button>
+                    </form>
+                    <p>Already have an account? <a href="#" id="login-btn"><strong class="ml-1">Log in here</strong></a> </p>
+                </div>
+            </section>
+        </div>
+
+        <div class="text css-typing">
+            <p>{   Hi   </>
+            <p>  There  };</>
+        </div>
+        
+
+        <div class="col-md-5">
+            <div class="carousel-img-1"></div>
+            <img id="gif" src="{% static 'assets/img/image_processing20200120-18687-iayp43.gif' %}" alt="" />
+        </div>
+    </div>
+
+      <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
+
+    <script type="text/javascript" src="{% static 'assets/js/script.js' %}"></script>
+</body>
+</html>

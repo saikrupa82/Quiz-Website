@@ -1,0 +1,106 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<link rel="stylesheet" href="{% static 'assets//css/Pretty-Search-Form.css'%}">
+<link rel="stylesheet" href="{% static 'assets//css/Profile-Card.css'%}">
+
+    <link rel="stylesheet" href="assets/css/Profile-Card.css">
+<div class="container-fluid">
+    <h3 class="text-dark mb-4">Profile</h3>
+    <div class="row mb-3">
+        <div class="col-lg-8">
+            <div class="row mb-3 d-none">
+                <div class="col">
+                    <div class="card text-white bg-primary shadow">
+                        <div class="card-body">
+                            <div class="row mb-2">
+                                <div class="col">
+                                    <p class="m-0">Peformance</p>
+                                    <p class="m-0"><strong>65.2%</strong></p>
+                                </div>
+                                <div class="col-auto"><i class="fas fa-rocket fa-2x"></i></div>
+                            </div>
+                            <p class="text-white-50 small m-0"><i class="fas fa-arrow-up"></i>&nbsp;5% since last month</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card text-white bg-success shadow">
+                        <div class="card-body">
+                            <div class="row mb-2">
+                                <div class="col">
+                                    <p class="m-0">Peformance</p>
+                                    <p class="m-0"><strong>65.2%</strong></p>
+                                </div>
+                                <div class="col-auto"><i class="fas fa-rocket fa-2x"></i></div>
+                            </div>
+                            <p class="text-white-50 small m-0"><i class="fas fa-arrow-up"></i>&nbsp;5% since last month</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="profile-card">
+    <div class="profile-back" style="background: url(&quot;https://img.freepik.com/free-vector/gradient-geometric-shape-background_78532-374.jpg?size=626&amp;ext=jpg&quot;) top / cover no-repeat, linear-gradient(black, white);height: 267px;"></div><img class="rounded-circle profile-pic" src="{% static 'assets/img/1.png' %}">
+    <h3 class="profile-name" style="background: linear-gradient(-73deg, rgb(0,99,248), rgb(45,228,217));height: 31px;">{{ students.first_name }} {{ students.last_name }}</h3>
+    <p class="mb-4" style="margin: 5px;"><strong>{{ students.username}}</strong></p>
+    <ul class="social-list">
+        <li> <i class="fab fa-reddit" style="background: rgb(255,0,0);"></i></li>
+        <li> <i class="fab fa-github" style="background: rgb(113,114,115);"></i></li>
+        <li> <i class="fab fa-linkedin-square" style="background: rgb(0,148,255);"></i></li>
+    </ul>
+</div>
+
+
+
+<ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">statistics(Line Graph)</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">Students Progress</a>
+    </li>
+    <!-- <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">Third Panel</a>
+    </li> -->
+</ul>
+<!-- Tab panes -->
+<div class="tab-content">
+    <div class="tab-pane active" id="tabs-1" role="tabpanel">
+        <div class=""id="container"></div>
+<script src="https://code.highcharts.com/highcharts.js"> </script>
+<script src="https://code.highcharts.com/modules/exporting.js"> </script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script>
+  Highcharts.chart('container', {{ chart|safe }});
+</script>
+    </div>
+    <div class="tab-pane" id="tabs-2" role="tabpanel">
+        <table class="table table-striped table-dark">
+            <thead>
+                <tr>
+                    <th> Name</th>
+                    <th> Roll Number</th>
+                    <th>Test Name</th>
+                    <th>Score</th>
+                    <th>Correct Answer</th>
+                    <th>Wrong Answer/Not Attmpeted</th>
+                </tr>
+            </thead>
+            <tbody>
+        {% for i in leaderboard %}
+        {% if i.rollno == students.username %}
+        <tr>
+            <td>{{ students.Name}}</td>
+            <td >{{ i.rollno}}</td>
+            <td>{{i.test}}</td>
+            <td>{{ i.securedscore}}/{{i.totalscore}}</td>
+            <td>{{ i.correct_answer }}</td>
+            <td>{{i.wrong_answer }}</td>
+        </tr>
+    </tbody>
+    {% endif %}{% endfor %}  
+</table>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,100 @@
+@import url(https://fonts.googleapis.com/css?family=Work+Sans:300,600);
+
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.flex-container > div {
+  width: 50%;
+  text-align: center;
+  font-size: 30px;
+  margin-top: 10px;
+}
+#msform fieldset {
+	background: white;
+	border: 0 none;
+	border-radius: 3px;
+	/* box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4); */
+	padding: 20px 30px;
+	box-sizing: border-box;
+	width: 80%;
+	margin: 0 10%;
+	
+	/*stacking fieldsets above each other*/
+	/* position: relative; */
+}
+#msform input, #msform textarea {
+	padding: 15px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	margin-bottom: 10px;
+	/* width: 100%; */
+	box-sizing: border-box;
+	font-family: montserrat;
+	color: #2C3E50;
+	font-size: 13px;
+}
+.option{
+    width: 30%;
+}
+.question{
+    width: 94%;
+}
+.correctOption{
+    display: block;
+    width: 30%;
+}
+.quizname{
+    margin: 0 18%;
+    width: 60%;
+}
+/*headings*/
+.fs-title {
+	font-size: 15px;
+	text-transform: uppercase;
+	color: #2C3E50;
+    margin-top:10px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.question{
+  padding:80px;
+}
+.add-question{
+	font-size: 25px;
+	background-color: rgba(255, 132, 43,0.3);
+	color: #fff;
+	padding: 5px 10px;
+	border: none;
+	
+	cursor: pointer;
+}
+.add-question:hover {
+	background-color: rgba(255, 132, 43,0.7);
+}
+.save{
+	font-family: 'Work Sans', sans-serif;
+	font-size: 20px;
+	background-color: rgba(52, 235, 91,0.7);
+	color: #fff;
+	padding: 5px 10px;
+	border: none;
+	
+	cursor: pointer;
+}
+.save:hover{
+	background-color: rgba(52, 235, 91);
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+.buttons > button{
+	margin: 10px;
+}
+ 

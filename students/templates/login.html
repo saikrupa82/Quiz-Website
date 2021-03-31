@@ -1,0 +1,154 @@
+{% extends 'base.html' %}{% load static %} {% block content %}
+<!-- partial:index.partial.html -->
+<link rel="stylesheet" href="{% static 'assets/css/popup.css'%}">
+<link rel="stylesheet"
+  href="https://res.cloudinary.com/dxfq3iotg/raw/upload/v1569006288/BBBootstrap/choices.min.css?version=7.0.0">
+<script
+  src="https://res.cloudinary.com/dxfq3iotg/raw/upload/v1569006273/BBBootstrap/choices.min.js?version=7.0.0"></script>
+
+
+
+<div class="modal fade hide bd-example-modal-lg" id ="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    
+    <div class="modal-content">
+      <button type="button" class="close ml-auto" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">×</span>
+      </button>
+      <div class="form-group p-4">
+        <div class="">
+          <h2 class="text-center">Session Detail's</h2>
+          <hr>
+
+          <form autocomplete="off" class="form" role="form">
+            <div class="form-group ">
+              <label for="cc_name">Name Of Session</label>
+              <input class="form-control" id="cc_name" required="required" title="First and last name" type="text">
+            </div>
+
+            <div class="form-row">
+              <div class="col-md-6">
+                <label for="validationDefault01">Choose Year</label>
+
+                <select id="choices-multiple-remove-button" placeholder="Select upto 4 tags" multiple>
+                  <option value="CIVIL">First Year</option>
+                  <option value="EEE">Second Year</option>
+                  <option value="ECE">Third Year</option>
+                  <option value="CSE">Fourth Year</option>
+                </select> </div>
+              <div class="col-md-6 ">
+                <label for="validationDefault02">Select the Branch</label>
+                <select id="choices-multiple-remove-button" placeholder="Select upto 5 tags" multiple>
+                  <option value="CIVIL">CIVIL</option>
+                  <option value="EEE">EEE</option>
+                  <option value="ECE">ECE</option>
+                  <option value="MECH">MECH</option>
+                  <option value="CSE">CSE</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row m-4">
+              <div class="col-md-4">
+                <label for="exampleFormControlSelect1">Number Of Quiz</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                  <option>0</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                  <option>10</option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                <label for="exampleFormControlSelect1">Number Of Lab</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                  <option>0</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                <label for="exampleFormControlInput1">Email address</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+              </div>
+            </div>
+
+            <hr>
+            <div class="form-group row m-2">
+              <div class="col-md-6">
+                <button class="btn btn-default btn-lg btn-block" type="reset">Cancel</button>
+              </div>
+              <div class="col-md-6">
+                <button class="btn btn-success btn-lg btn-block" type="submit">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card">
+  
+  <div class=" card-header p-0 m-0">
+    <p class="p-0 m-0">
+    <h1 class="p-0 m-0">Details Of Session</h1><br>
+    <div class="form-inline">
+      <h4>Please refill the session details if want to get a new session</h4>
+    <button type="button" class="btn btn-outline-dark m-4" data-toggle="modal"data-target=".bd-example-modal-lg">Please Fill session Details</button></p>
+  </div>
+  </div>
+  <div class="card-body">
+    <form class="form-inline row">
+      <div class="form-group mb-2">
+        <label for="staticEmail2" class="sr-only">Email</label>
+        <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="Session Link">
+      </div>
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="inputPassword2" class="sr-only">Link</label>
+        <input type="password" class="form-control" id="inputPassword2" placeholder="Link">
+      </div>
+      <div class="ml-auto ">
+        <button type="submit" class="btn btn-outline-success p-2 m-2 btn-lg"> Start </button>
+        <button type="submit" class="btn btn-outline-danger p-2 m-2 btn-lg"> Stop </button>
+      </div>
+    </form>
+    <form class="form-inline row">
+      <div class="form-group mb-2">
+        <label for="staticEmail2" class="sr-only">Email</label>
+        <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="Quiz">
+      </div>
+      <div class="ml-auto ">
+        <button type="submit" class="btn btn-outline-success p-2 m-2 btn-lg"> Start </button>
+        <button type="submit" class="btn btn-outline-danger p-2 m-2 btn-lg"> Stop </button>
+      </div>
+    </form>
+    <form class="form-inline row">
+      <div class="form-group mb-2">
+        <label for="staticEmail2" class="sr-only">Lab</label>
+        <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="Lab">
+      </div>
+
+      <div class="ml-auto ">
+        <button type="submit" class="btn btn-outline-success p-2 m-2 btn-lg"> Start </button>
+        <button type="submit" class="btn btn-outline-danger p-2 m-2 btn-lg"> Stop </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+
+<script src="{% static 'assets/js/popup.js' %}"></script>
+
+{% endblock %}

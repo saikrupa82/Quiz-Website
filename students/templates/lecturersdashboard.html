@@ -1,0 +1,101 @@
+{% extends 'base.html' %}{% load static %} {% block content %}{% csrf_token %}
+<!-- partial:index.partial.html -->
+<link rel="stylesheet" href="{% static 'assets/css/popup.css'%}">
+<link rel="stylesheet"
+  href="https://res.cloudinary.com/dxfq3iotg/raw/upload/v1569006288/BBBootstrap/choices.min.css?version=7.0.0">
+<script
+  src="https://res.cloudinary.com/dxfq3iotg/raw/upload/v1569006273/BBBootstrap/choices.min.js?version=7.0.0"></script>
+
+<div class="modal show bd-example-modal-lg" data-backdrop="static" id="myModal" tabindex="-1" role="dialog"
+  aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+
+    <div class="modal-content">
+      <button type="button" class="close ml-auto" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">×</span>
+      </button>
+      <div class="form-group p-4">
+        <div class="">
+          <h2 class="text-center">Session Detail's</h2>
+          <hr>
+
+          <form autocomplete="off" class="form" role="form" action="" method="post">
+            {%  csrf_token  %}
+
+            <div class="col-lg-12 p-2 m-2">
+              <label class="sr-only" for="inlineFormInputGroup">Username</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">Session Name</div>
+                </div>
+                <input type="text" name="SessionName" class="form-control" id="inlineFormInputGroup"
+                  placeholder="Enter the Name Of the session">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="col-md-6">
+                <label for="validationDefault01">Choose Year</label>
+
+                <select id="choices-multiple-remove-button" placeholder="Select upto 4 tags" multiple name="Branch">
+                  <option value="First">First Year</option>
+                  <option value="Second">Second Year</option>
+                  <option value="Third">Third Year</option>
+                  <option value="Fourth">Fourth Year</option>
+                </select> </div>
+              <div class="col-md-6 ">
+                <label for="validationDefault02">Select the Branch</label>
+                <select id="choices-multiple-remove-button" placeholder="Select upto 5 tags" multiple name="Year">
+                  <option value="CIVIL">CIVIL</option>
+                  <option value="EEE">EEE</option>
+                  <option value="ECE">ECE</option>
+                  <option value="MECH">MECH</option>
+                  <option value="CSE">CSE</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row m-4">
+              <div class="col-md-4">
+                <label for="exampleFormControlSelect1">Type Of Exam</label>
+                <select class="form-control" id="exampleFormControlSelect1" name="TypeOfExam" placeholder="Type Of Exam">
+                  <option>Quiz</option>
+                  <option>Lab</option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                <label for="exampleFormControlSelect1">Name of test</label>
+                <input type="text" name="NameOfTest" class="form-control" id="inlineFormInputGroup"
+                  placeholder="Enter the Name Of the session">
+              </div>
+              <div class="col-md-4">
+                <label for="exampleFormControlInput1">Email address</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+              </div>
+            </div>
+
+            <hr>
+            <div class="form-group row m-2">
+              <div class="col-md-6">
+                <button class="btn btn-default btn-lg btn-block" type="reset">Cancel</button>
+              </div>
+              <div class="col-md-6">
+                <button class="btn btn-success btn-lg btn-block" type="submit" name="popup1"
+                  value="popup1">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<script src="{% static 'assets/js/cal.js' %}"></script>
+
+<script src="{% static 'assets/js/popup.js' %}"></script>
+
+
+{% endblock %}

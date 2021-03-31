@@ -1,0 +1,273 @@
+body{
+	font-size: 20px;
+	font-family: 'Work Sans', sans-serif;
+	color: #1c1c1c;
+  font-weight: 300;
+  text-align: center;
+  background-color: #ffffff;
+  overflow-x:hidden ;
+}
+/*nav*/
+.nav{
+  display: flex;
+  height: 70px;
+}
+.Subject-Name {
+	position: relative;
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 32px;
+  display: block;
+  text-align: left;
+  padding: 4px 4px;
+  margin: 1% 10%;
+}
+
+.components{
+  display: grid;
+  grid-column: auto;
+}
+.main{
+  display: flex;
+}
+.quiz-container{
+  width: 50%;
+  height: 70%;
+  background: #e4e4e4;
+  padding: 3% 3% 0% 3%;
+  border-radius: 12px;
+  margin-left: 10%; 
+}
+
+.quiz-container::-webkit-scrollbar-thumb {
+  background: #000;
+}
+
+
+#quiz{
+  background-color: #e4e4e4;
+  height: auto;
+  text-align: left; 
+}
+
+.question{
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 500;
+  font-size: 24px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: hidden;
+}
+.answers {
+  font-family: Montserrat;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 20px;
+  text-align: left;
+  display: inline-block;
+  -webkit-user-select: none;
+  scrollbar-color: blue white ;
+  scroll-behavior: smooth;
+}
+.answers label{
+  
+  align-items: center;
+  border-radius: 10px;
+	display: block;
+  margin-top: 20px;
+  padding: 2px;
+}
+.answers label:hover{
+  background: #9b9b9b;
+  color: #ffffff ;
+}
+
+
+
+.slide{
+  height: 300px;
+  position: absolute;
+  width: 50%;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0s;
+  overflow-x: scroll;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scrollbar-color: black gray;
+}
+
+.active-slide{
+  opacity: 1;
+  z-index: 2;
+}
+
+.taq{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  left: 3%;
+}
+
+
+
+.clock{
+  width: 250px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+  background: #e4e4e4;
+  border-radius: 10px;
+  -webkit-user-select: none
+}
+
+.status{
+  background: #e4e4e4;
+  width: 250px;
+  height: 210px;
+  padding: 2% 2%;
+  border-radius: 10px;
+  margin-top: 8%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scrollbar-color: green; 
+}
+
+.status button{
+  width: 30px;
+  height: 30px;
+  margin: 3% 2% 2% 2%;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+#submit {
+  width:250px ;
+  height: 50px;
+  position: relative;
+  margin-top: 10%;
+  margin-left: 3% ;
+  border-radius :10px;
+  border: none;
+  background:#5DA571;
+  color: #ffffff;
+  transition: all 0.4s;
+}
+#submit:hover{
+  cursor: pointer;
+  outline: none;
+}
+
+
+.fac{
+  display: flex;
+  position: relative;
+  margin-top:10%;
+  left:12%;
+}
+.fac button{
+  width: 100px;
+  height: 40px;
+  margin-left: 5px;
+  border-radius: 5px;
+  border: none;
+}
+#flag:hover{
+  background: rgb(255, 97, 97);
+  color: #ffffff;
+}
+
+#clear:hover{
+  background: rgb(145, 87, 252);
+  color: #ffffff;
+}
+
+.buttons button{
+  position: relative;
+  left: 100px;
+  width: 130px;
+  height: 35px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.buttons button:hover{
+ background: #555555;
+ color: #ffffff;
+}
+.buttons button:focus{
+  outline: none;
+ }
+
+ #results{
+   position: relative;
+   top: 50px;
+   right: 80px;
+ }
+
+ /* Popup box BEGIN */
+.hover_bkgr_fricc{
+  background:rgba(0,0,0,.4);
+  cursor:pointer;
+  display:none;
+  height:100%;
+  position:fixed;
+  text-align:center;
+  top:0;
+  width:100%;
+  z-index:10000;
+}
+.hover_bkgr_fricc .helper{
+  display:inline-block;
+  height:100%;
+  vertical-align:middle;
+}
+.hover_bkgr_fricc > div {
+  background-color: #fff;
+  box-shadow: 10px 10px 60px #555;
+  display: inline-block;
+  height: auto;
+  max-width: 551px;
+  min-height: 100px;
+  vertical-align: middle;
+  width: 60%;
+  position: relative;
+  border-radius: 8px;
+  padding: 15px 5%;
+}
+.popupCloseButton {
+  background-color: #fff;
+  border: 3px solid #999;
+  border-radius: 50px;
+  cursor: pointer;
+  display: inline-block;
+  font-family: arial;
+  font-weight: bold;
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  font-size: 25px;
+  line-height: 30px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
+.popupCloseButton:hover {
+  background-color: #ccc;
+}
+.trigger_popup_fricc {
+  cursor: pointer;
+  font-size: 20px;
+  margin: 20px;
+  display: inline-block;
+  font-weight: bold;
+}
+/* Popup box BEGIN */
