@@ -1,6 +1,7 @@
 # College Student Quiz System - Django Web Application
 
 This is a Django-based web application designed for colleges to create and manage quizzes for students. The application allows lecturers to create quizzes, manage quiz sessions, and view the performance of students. Students can take quizzes, view results, and track their progress. It includes features like user authentication, quiz creation, leaderboard management, and session handling.
+![image](https://github.com/user-attachments/assets/4de9b914-88ce-4554-96f6-6e8b4308748c)
 
 ## Features
 
@@ -88,9 +89,13 @@ This is a Django-based web application designed for colleges to create and manag
 
 ### `Session_Details`
 Handles the session data, including quiz names, branches, years, and the quiz creator’s information.
+![image](https://github.com/user-attachments/assets/9e42028c-56e7-498b-9616-b9f05ddf0284)
+
 
 ### `Quiz`
 Stores individual quiz questions and their options. Also tracks correct answers for each quiz session.
+![image](https://github.com/user-attachments/assets/dbe3b938-3443-4d88-a1e7-f40e67d1ef04)
+
 
 ### `QuizList`
 Tracks the list of quizzes and handles the duration and number of questions.
@@ -103,7 +108,12 @@ Handles student-specific information like roll number, role, and other personal 
 
 ### `CustomUser`
 Custom user model extending Django’s `AbstractUser` for handling different user types.
+![image](https://github.com/user-attachments/assets/a0057158-fde9-44a6-8b29-5ee7afde7293)
+
 
 ## Screenshots
+![image](https://github.com/user-attachments/assets/0bec9579-7524-49ad-afc6-07111c75769d)
 
-(Include relevant screenshots of the application here, showcasing the dashboard, quiz creation, quiz-taking interface, and leaderboard.)
+![image](https://github.com/user-attachments/assets/3a90df20-415c-405b-9ba4-ac04d8678550)
+
+
